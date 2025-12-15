@@ -1,6 +1,6 @@
-{% set python_min = '3.10.0' %}
+{% set python_min = "3.10.0" %}
 {% set name = "nccompare" %}
-{% set version = "0.2.4" %}
+{% set version = "0.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -8,14 +8,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nccompare-{{ version }}.tar.gz
-  sha256: 2f0443c32aba588a8a48667085b4a2419bafb763057992db87e7bd76b6ee280b
+  sha256: 75aabe4d2ec010ecd9da273181e1b84b1012ceb882a1c6975df13787ca7f95c6
 
 build:
   entry_points:
     - ncpare = nccompare.management:start_from_command_line_interface
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
